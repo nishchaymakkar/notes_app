@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:notes_app/component/my_drawer.dart';
 import 'package:notes_app/models/note_database.dart';
 import 'package:provider/provider.dart';
 
@@ -74,29 +76,45 @@ class _NotesPageState extends State<NotesPage> {
     
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Notes"),
+        backgroundColor:
+        Theme.of(context).colorScheme.surface,
+        foregroundColor: Theme.of(context).colorScheme.onSurface,
         centerTitle: true,
       ),
+      drawer: MyDrawer(),
       floatingActionButton: FloatingActionButton(
         onPressed: createNote,
         child: const Icon(Icons.add),
       ),
-      body: ListView.builder(
-        itemCount: currentNotes.length,
-          itemBuilder: (context,index){
-        final note = currentNotes[index];
+      backgroundColor: Theme.of(context).colorScheme.surface,
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(25.0),
+            child: Text("Notes", style:GoogleFonts.dmSerifText(fontSize: 48,color: Theme.of(context).colorScheme.inversePrimary),)
 
-        return ListTile(
-          title: Text(note.text),
-          trailing: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              IconButton(onPressed: ()=> updateNote(note), icon: const Icon(Icons.edit)),
-              IconButton(onPressed: () => deleteNote(note.id), icon: const Icon(Icons.delete)),
-            ],
           ),
-        );
-      }),
+          Expanded(
+            child: ListView.builder(
+              itemCount: currentNotes.length,
+                itemBuilder: (context,index){
+              final note = currentNotes[index];
+
+              return ListTile(
+                title: Text(note.text),
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    IconButton(onPressed: ()=> updateNote(note), icon: const Icon(Icons.edit)),
+                    IconButton(onPressed: () => deleteNote(note.id), icon: const Icon(Icons.delete)),
+                  ],
+                ),
+              );
+            }),
+          ),
+        ],
+      ),
     );
   }
 }
