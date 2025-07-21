@@ -21,6 +21,7 @@ class NoteDatabase extends ChangeNotifier {
     final newNote = Note()..text = textFromUser;
 
     await isar.writeTxn(() => isar.notes.put(newNote));
+    fetchNotes();
 
   }
 
