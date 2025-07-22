@@ -1,16 +1,9 @@
 # notes_app
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots
+<img src="https://github.com/user-attachments/assets/6ec934c5-eb5d-4ee9-8ca5-53039bcf7c48" width="200" alt="Home Screen Light Mode"/>
+<img src="https://github.com/user-attachments/assets/61c3f53a-c5cf-42ff-b500-3e87ffa1636f" width="200" alt="Drawer Light Mode"/>
+<img src="https://github.com/user-attachments/assets/ff21f481-487e-4ace-901a-1e369b4d6951" width="200" alt="Setting Light Mode"/>
+<img src="https://github.com/user-attachments/assets/c544f49c-e9b1-440e-9ab0-b8fd928512da" width="200" alt="Notes Dark Mode"/>
+<img src="https://github.com/user-attachments/assets/4c7e6f28-73a0-436a-891a-81cc52b6a7cc" width="200" alt="Drawer Dark Mode"/>
+<img src="https://github.com/user-attachments/assets/47b2a3af-35a9-4249-ad55-bed8d6637d72" width="200" alt="Settings Dark Mode"/>
