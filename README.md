@@ -6,4 +6,4 @@
 <img src="https://github.com/user-attachments/assets/ff21f481-487e-4ace-901a-1e369b4d6951" width="200" alt="Setting Light Mode"/>
 <img src="https://github.com/user-attachments/assets/c544f49c-e9b1-440e-9ab0-b8fd928512da" width="200" alt="Notes Dark Mode"/>
 <img src="https://github.com/user-attachments/assets/4c7e6f28-73a0-436a-891a-81cc52b6a7cc" width="200" alt="Drawer Dark Mode"/>
-<img src="https://github.com/user-attachments/assets/47b2a3af-35a9-4249-ad55-bed8d6637d72" width="200" alt="Settings Dark Mode"/>
+<img src="https://github.com/user-attachments/assets/790e0f5d-6dbe-4d3e-91da-e30bac7dc669" width="200" alt="Settings Dark Mode"/>
