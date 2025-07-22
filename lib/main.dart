@@ -9,7 +9,6 @@ import 'models/note_database.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await NoteDatabase.initialize();
-  final textTheme = ThemeData.light().textTheme.apply(fontFamily: 'Roboto');
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (context) => NoteDatabase()),
@@ -26,13 +25,24 @@ class MyApp extends StatelessWidget {
   const MyApp({super.key});
    @override
   Widget build(BuildContext context) {
-     final brightness = View.of(context).platformDispatcher.platformBrightness;
        TextTheme textTheme = createTextTheme(context, 'Roboto', 'Roboto');
-
-       MaterialTheme theme = MaterialTheme(textTheme);
+      final themeProvider = Provider.of<ThemeProvider>(context);
+     ThemeData theme(ColorScheme colorScheme) => ThemeData(
+       useMaterial3: true,
+       brightness: colorScheme.brightness,
+       colorScheme: colorScheme,
+       textTheme: textTheme.apply(
+         bodyColor: colorScheme.onSurface,
+         displayColor: colorScheme.onSurface,
+       ),
+       scaffoldBackgroundColor: colorScheme.surface,
+       canvasColor: colorScheme.surface,
+     );
        return MaterialApp(
          debugShowCheckedModeBanner: false,
-         theme: brightness == Brightness.light ? theme.light() : theme.dark(),
+         themeMode: themeProvider.themeMode,
+          theme: theme(MaterialTheme.lightScheme()),
+          darkTheme: theme(MaterialTheme.darkScheme()),
          home:const NotesPage(),
 
        );

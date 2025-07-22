@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:notes_app/component/my_drawer.dart';
+import 'package:notes_app/component/notes_tile.dart';
 import 'package:notes_app/models/note_database.dart';
 import 'package:provider/provider.dart';
 
@@ -65,6 +66,7 @@ class _NotesPageState extends State<NotesPage> {
   //delete notes
   void deleteNote(int id){
     context.read<NoteDatabase>().deleteNote(id);
+    textController.clear();
   }
 
   @override
@@ -101,16 +103,7 @@ class _NotesPageState extends State<NotesPage> {
                 itemBuilder: (context,index){
               final note = currentNotes[index];
 
-              return ListTile(
-                title: Text(note.text),
-                trailing: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    IconButton(onPressed: ()=> updateNote(note), icon: const Icon(Icons.edit)),
-                    IconButton(onPressed: () => deleteNote(note.id), icon: const Icon(Icons.delete)),
-                  ],
-                ),
-              );
+              return NotesTile(text: note.text,onEditPressed: () => updateNote(note), onDeletePressed: () => deleteNote(note.id));
             }),
           ),
         ],

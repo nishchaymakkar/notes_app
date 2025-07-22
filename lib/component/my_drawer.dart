@@ -12,7 +12,7 @@ class MyDrawer extends StatelessWidget {
       backgroundColor: Theme.of(context).colorScheme.surface,
       child: Column(
         children: [
-          DrawerHeader(child: Icon(Icons.note)),
+          DrawerHeader(child: Icon(Icons.edit)),
           DrawerTile(title: "Notes", leading: Icon(Icons.home), onTap: ()=> Navigator.pop(context)),
           DrawerTile(title: "Settings", leading: Icon(Icons.settings), onTap: () {
             Navigator.pop(context);
